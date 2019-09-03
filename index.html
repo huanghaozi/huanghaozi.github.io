@@ -1,8 +1,34 @@
 <html>
 <frameset framespacing="0" border="0" rows="0" frameborder="0">
 <frame name="main" src="https://pipe.b3log.org/blogs/huanghaozi/" scrolling="auto" noresize>
-</frameset>
 <script>
-$("head").append('<script charset="utf-8" async="" src="common.min.js"></script><link rel="stylesheet" type="text/css" href="common.css">')
+function dynamicLoadCss(url) {
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.type='text/css';
+        link.rel = 'stylesheet';
+        link.href = url;
+        head.appendChild(link);
+    }
+function dynamicLoadJs(url, callback) {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = url;
+        if(typeof(callback)=='function'){
+            script.onload = script.onreadystatechange = function () {
+                if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete"){
+                    callback();
+                    script.onload = script.onreadystatechange = null;
+                }
+            };
+        }
+        head.appendChild(script);
+    
+dynamicLoadCss('common.css')
+	
+dynamicLoadJs('common.min.js',function(){alert('加载成功')});
+
 </script>
+</frameset>
 </html> 
