@@ -1,34 +1,15 @@
 <html>
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4584136042479458",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
 <frameset framespacing="0" border="0" rows="0" frameborder="0">
 <frame name="main" src="http://pipe.b3log.org/blogs/huanghaozi/" scrolling="auto" noresize>
-<script>
-function dynamicLoadCss(url) {
-        var head = document.getElementsByTagName('head')[0];
-        var link = document.createElement('link');
-        link.type='text/css';
-        link.rel = 'stylesheet';
-        link.href = url;
-        head.appendChild(link);
-    }
-function dynamicLoadJs(url, callback) {
-        var head = document.getElementsByTagName('head')[0];
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = url;
-        if(typeof(callback)=='function'){
-            script.onload = script.onreadystatechange = function () {
-                if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete"){
-                    callback();
-                    script.onload = script.onreadystatechange = null;
-                }
-            };
-        }
-        head.appendChild(script);
-    
-dynamicLoadCss('common.css')
-	
-dynamicLoadJs('common.min.js',function(){alert('加载成功')});
 
-</script>
 </frameset>
 </html> 
